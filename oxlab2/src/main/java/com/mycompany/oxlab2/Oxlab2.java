@@ -10,9 +10,11 @@ package com.mycompany.oxlab2;
  */
 public class Oxlab2 {
     static char[][] board= {{'_', '_', '_'},{'_', '_', '_'},{'_', '_', '_'}};
+    private static char player = 'X';
     public static void main(String[] args) {
        printStartGameOX();
        printShowBoard();
+       printShowTurn();
        
     }
     private static void  printStartGameOX() {
@@ -31,5 +33,10 @@ public class Oxlab2 {
         }
          
     }
+     private static void printShowTurn() {
+        System.out.println("______________");
+        System.out.println("Next Turn ➤➤ " + player);
+    }
+     
    
 }
