@@ -11,6 +11,11 @@ package com.mycompany.oxlab2;
 public class Oxlab2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       printStartGameOX();
+    }
+    private static void  printStartGameOX() {
+         System.out.println("WELCOME OX GAME 👀");
+         System.out.print("Start Game ➤➤ (y/n): ");
+        
     }
 }
