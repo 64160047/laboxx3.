@@ -48,6 +48,44 @@ public class Oxlab2 {
 
         }
     }
+    public static void printInputRowAndCol() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input row ➤ ");
+        row = sc.nextInt();
+        System.out.print("Input column ➤ ");
+        col = sc.nextInt();
+        if (((row > 0 && row < 4) && (col > 0 && col < 4))) {
+
+            if (board[row - 1][col - 1].equals("_")) {
+
+                board[row - 1][col - 1] = turn.toUpperCase();
+              
+
+            } else {
+
+                while ((!(row > 0 && row < 4) && !(col > 0 && col < 4)) && !(board[row - 1][col - 1].equals("_"))) {
+
+                    System.out.println("Please Input Again.");
+                    System.out.print("Input row ➤ ");
+                    row = sc.nextInt();
+                    System.out.print("Input column ➤");
+                    col = sc.nextInt();
+
+                }
+
+                return;
+            }
+
+        } else {
+            return;
+        }
+    }
+    public static void showTurn() {
+        System.out.println("_________________________");
+        System.out.println("Next Turn ➤➤ " + turn.toUpperCase());
+
+    }
+
 
 
     
