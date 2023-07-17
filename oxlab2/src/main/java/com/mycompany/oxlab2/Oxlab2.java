@@ -40,10 +40,10 @@ public class Oxlab2 {
 
     public static void inputStartgame() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Start XO Games? (Y/N) : ");
+        System.out.print("Start XO Games? (Y/N) ➤ ");
         startgame = sc.nextLine().toLowerCase();
         while (!startgame.equals("y") && !startgame.equals("n")) {
-            System.out.print("Start XO Games? (Y/N) : ");
+            System.out.print("Start XO Games? (Y/N) ➤ ");
             startgame = sc.nextLine().toLowerCase();
         }
         if (startgame.equals("n")) {
@@ -56,23 +56,23 @@ public class Oxlab2 {
     }
 
     public static void printTable() {
-        System.out.println(" ----------- ");
+        System.out.println(" ⎯⎯⎯⎯⎯⎯⎯ ");
         for (int i = 0; i < table.length; i++) {
             for (int j = 0; j < table[i].length; j++) {
                 System.out.print("  " + table[i][j] + " ");
             }
             System.out.println();
         }
-        System.out.println(" ----------- ");
+        System.out.println(" ⎯⎯⎯⎯⎯⎯⎯  ");
 
     }
 
     public static void inputFirstturn() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Who first player? (X/O) : ");
+        System.out.print("Who first player? (X/O) ➤ ");
         turn = sc.nextLine().toLowerCase();
         while (!turn.equals("x") && !turn.equals("o")) {
-            System.out.print("Who first player? (X/O) : ");
+            System.out.print("Who first player? (X/O) ➤ ");
             turn = sc.nextLine().toLowerCase();
         }
         if (turn.equals("x")) {
@@ -88,12 +88,12 @@ public class Oxlab2 {
     }
 
     public static void printTurn() {
-        System.out.println("Now " + turn.toUpperCase() + " turn");
+        System.out.println("Now ➤ " + turn.toUpperCase() + " turn");
     }
 
     public static void inputRowCol() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Please input row, column : ");
+        System.out.print("Please input row, column ➤ ");
         row = sc.nextInt();
         col = sc.nextInt();
         if (((row > 0 && row < 4) && (col > 0 && col < 4))) {
@@ -123,9 +123,9 @@ public class Oxlab2 {
     }
 
     public static void isWin() {
-        if (checkCol() || checkRow() || checkObliquely()) {
+        if (checkCol() || checkRow() || checkDiagonal()) {
             System.out.println(" ----- Congratulations ----- ");
-            System.out.println("       Who the winner 🏆  is " + turn.toUpperCase());
+            System.out.println(" Who the winner 🏆  is  " + turn.toUpperCase());
             System.out.println("--------------------------------");
             if (inputContinute()) {
                 resetTable();
@@ -135,7 +135,7 @@ public class Oxlab2 {
         }
         if (end == false) {
             if (checkDraw()) {
-                System.out.println("****** Game over ******");
+                System.out.println(" Game over 😈 ");
                 System.out.println("  -----    Draw   -----  ");
                 System.out.println("---------------------------");
                 if (inputContinute()) {
@@ -166,7 +166,7 @@ public class Oxlab2 {
         return true;
     }
 
-    public static boolean checkObliquely() {
+    public static boolean checkDiagonal() {
         if (row - 1 == col - 1) {
             for (int i = 0; i < table.length; i++) {
                 if (!table[i][i].toLowerCase().equals(turn)) {
@@ -199,15 +199,15 @@ public class Oxlab2 {
 
     public static boolean inputContinute() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Do You want to play again (Y/N) 🚪 : ");
+        System.out.print("Do You want to play again (Y/N) 🚪 ➤ ");
         continute = sc.next();
         while (!continute.toLowerCase().equals("n") && !continute.toLowerCase().equals("y")) {
-            System.out.print("Do You want to play again (Y/N) 🚪 : ");
+            System.out.print("Do You want to play again (Y/N) 🚪 ➤ ");
             continute = sc.next().toLowerCase();
         }
         if (continute.equals("n")) {
             end = true;
-            System.out.println("    ----- See yaaa 💖 ----- ");
+            System.out.println(" ----- See yaaa 💖 ----- ");
             return false;
         }
         return true;
