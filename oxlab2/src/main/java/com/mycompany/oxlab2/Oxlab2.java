@@ -20,7 +20,7 @@ public class Oxlab2 {
    
     public static void main(String[] args) {
         printStartGameOX(); 
-     
+        printShowBoard();
 
     }
     public static void printStartGameOX() {
@@ -36,6 +36,16 @@ public class Oxlab2 {
             play = false;
         } else {
             play = true;
+        }
+    }
+    public static void printShowBoard() {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                System.out.print(board[i][j] + " ");
+
+            }
+            System.out.println();
+
         }
     }
 
