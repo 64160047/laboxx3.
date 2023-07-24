@@ -50,6 +50,14 @@ public class OXProgramUnitTest {
         assertEquals(false, OXProgram.checkWin(table, turn , row, col));
     }
     @Test
+    public void testCheckWinRow1BY_O_output_true() {
+        String[][] table = {{"O","O","O"},{"X","X","-"},{"-","-","-"}};
+        String turn = "O";
+         int row = 1;
+         int col = 1;
+        assertEquals(true, OXProgram.checkWin(table,turn, row, col));
+    }
+    @Test
     public void testCheckWinRow1BY_X_output_true() {
         String[][] table = {{"X","X","X"},{"O","O","-"},{"-","-","-"}};
         String turn = "X";
@@ -89,6 +97,14 @@ public class OXProgramUnitTest {
          int col = 3;
         assertEquals(true, OXProgram.checkWin(table,turn, row, col));
     }
+     @Test
+    public void testCheckWinCol1By_O_output_true() {
+        String[][] table = {{"O", "-", "-"}, {"O", "X", "X"}, {"O", "-", "-"}};
+        String turn = "O";
+        int row = 1;
+        int col = 1;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
     @Test
     public void testCheckWinCol1By_X_output_true() {
         String[][] table = {{"X", "-", "O"}, {"X", "X", "-"}, {"X", "O", "O"}};
@@ -105,7 +121,22 @@ public class OXProgramUnitTest {
         int col = 2;
         assertEquals(true, OXProgram.checkWin(table, turn, row, col));
     }
+     @Test
+    public void testCheckWinCol2By_X_output_true() {
+        String[][] table = {{"O", "X", "-"}, {"-", "X", "-"}, {"-", "X", "O"}};
+        String turn = "X";
+        int row = 2;
+        int col = 2;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
     @Test
+     public void testCheckWinCol3By_O_output_true() {
+        String[][] table = {{"-", "-", "O"}, {"X", "-", "O"}, {"X", "-", "O"}};
+        String turn = "O";
+        int row = 3;
+        int col = 3;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
     public void testCheckWinCol3By_X_output_true() {
         String[][] table = {{"-", "-", "X"}, {"-", "O", "X"}, {"-", "O", "X"}};
         String turn = "X";
@@ -121,11 +152,27 @@ public class OXProgramUnitTest {
         int col = 3;
         assertEquals(true, OXProgram.checkWin(table, turn, row, col));
     }
+    @Test
+    public void testCheckWinDiagonal1By_X_output_true() {
+        String[][] table = {{"X", "-", "O"}, {"-", "X", "O"}, {"-", "-", "X"}};
+        String turn = "X";
+        int row = 3;
+        int col = 3;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
 
     @Test
     public void testCheckWinDiagonal2By_O_output_true() {
         String[][] table = {{"-", "-", "O"}, {"-", "O", "-"}, {"O", "-", "-"}};
         String turn = "O";
+        int row = 3;
+        int col = 3;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
+     @Test
+    public void testCheckWinDiagonal2By_X_output_true() {
+        String[][] table = {{"O", "-", "X"}, {"-", "X", "O"}, {"X", "-", "-"}};
+        String turn = "X";
         int row = 3;
         int col = 3;
         assertEquals(true, OXProgram.checkWin(table, turn, row, col));
