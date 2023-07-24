@@ -9,11 +9,14 @@ package com.mycompany.laboxtest3;
  * @author minnie
  */
 class OXProgram {
-    
+    //Refactor
     static boolean checkWin(String[][] table,String currentPlayer) {
-        if(checkRow(table,currentPlayer,0)) return true;
-        if(checkRow(table,currentPlayer,1)) return true;
-        if(checkRow(table,currentPlayer,2)) return true;
+        for(int row=0; row<3; row++) {
+            if(checkRow(table,currentPlayer,row)) return true;
+            
+        }
+        
+      
         return false;
     }
 
