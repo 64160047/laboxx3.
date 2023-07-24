@@ -44,25 +44,50 @@ public class OXProgramUnitTest {
     @Test
     public void testCheckWinNoPlayBY_O_output_false() {
         String[][] table = {{"-","-","-"},{"-","-","-"},{"-","-","-"}};
-        String currentPlayer = "O";
-        assertEquals(false, OXProgram.checkWin(table,currentPlayer));
+        String turn = "O";
+          int row = 1;
+          int col = 1;
+        assertEquals(false, OXProgram.checkWin(table, turn , row, col));
     }
     @Test
-    public void testCheckWinRowBY_O_output_true() {
+    public void testCheckWinRow1BY_X_output_true() {
+        String[][] table = {{"X","X","X"},{"O","O","-"},{"-","-","-"}};
+        String turn = "X";
+         int row = 1;
+         int col = 1;
+        assertEquals(true, OXProgram.checkWin(table,turn, row, col));
+    }
+    @Test
+    public void testCheckWinRow2BY_O_output_true() {
         String[][] table = {{"-","-","-"},{"O","O","O"},{"-","-","-"}};
-        String currentPlayer = "O";
-        assertEquals(true, OXProgram.checkWin(table,currentPlayer));
+        String turn = "O";
+         int row = 2;
+         int col = 2;
+        assertEquals(true, OXProgram.checkWin(table,turn, row, col));
     }
     @Test
     public void testCheckWinRow2BY_X_output_true() {
-        String[][] table = {{"X","X","X"},{"-","O","O"},{"-","-","-"}};
-        String currentPlayer = "X";
-        assertEquals(true, OXProgram.checkWin(table,currentPlayer));
+        String[][] table = {{"-","-","-"},{"X","X","X"},{"-","-","-"}};
+        String turn = "X";
+         int row = 2;
+         int col = 2;
+        assertEquals(true, OXProgram.checkWin(table,turn, row, col));
+    }
+    @Test
+    public void testCheckWinRow3BY_O_output_true() {
+        String[][] table = {{"X","-","-"},{"-","X","-"},{"O","O","O"}};
+         String turn = "O";
+         int row = 3;
+         int col = 3;
+        assertEquals(true, OXProgram.checkWin(table,turn, row, col));
     }
     @Test
     public void testCheckWinRow3BY_X_output_true() {
-        String[][] table = {{"-","-","-"},{"-","O","O"},{"X","X","X"}};
-        String currentPlayer = "X";
-        assertEquals(true, OXProgram.checkWin(table,currentPlayer));
+         String[][] table = {{"-","O","O"},{"O","O","X"},{"X","X","X"}};
+         String turn = "X";
+         int row = 3;
+         int col = 3;
+        assertEquals(true, OXProgram.checkWin(table,turn, row, col));
     }
+
 }
