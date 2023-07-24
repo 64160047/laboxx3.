@@ -1,2 +1,5 @@
 
 /laboxx3/target/
+/laboxtest3/target/
+/laboxtest3/nbproject/
+.gitignore
