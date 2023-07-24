@@ -16,6 +16,17 @@ class OXProgram {
         }
         return false;
     }
+     static boolean checkDraw(String[][] table) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (table[i][j].equals("-")) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 
 
     private static boolean checkRow(String[][] table, String turn, int row, int col) {
@@ -54,6 +65,8 @@ class OXProgram {
         }
         return false;
     }
+
+    
 
 
 

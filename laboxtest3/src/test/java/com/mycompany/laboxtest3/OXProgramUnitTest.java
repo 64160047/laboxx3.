@@ -113,6 +113,30 @@ public class OXProgramUnitTest {
         int col = 3;
         assertEquals(true, OXProgram.checkWin(table, turn, row, col));
     }
+    @Test
+    public void testCheckWinDiagonal1By_O_output_true() {
+        String[][] table = {{"O", "-", "X"}, {"-", "O", "X"}, {"-", "-", "O"}};
+        String turn = "O";
+        int row = 3;
+        int col = 3;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
+
+    @Test
+    public void testCheckWinDiagonal2By_O_output_true() {
+        String[][] table = {{"-", "-", "O"}, {"-", "O", "-"}, {"O", "-", "-"}};
+        String turn = "O";
+        int row = 3;
+        int col = 3;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
+    
+    @Test
+    public void testCheckDraw_output_true() {
+        String[][] table = {{"X", "O", "X"}, {"O", "X", "O"}, {"O", "X", "O"}};
+        assertEquals(true, OXProgram.checkDraw(table));
+    }
+
 
 
 
