@@ -89,5 +89,32 @@ public class OXProgramUnitTest {
          int col = 3;
         assertEquals(true, OXProgram.checkWin(table,turn, row, col));
     }
+    @Test
+    public void testCheckWinCol1By_X_output_true() {
+        String[][] table = {{"X", "-", "O"}, {"X", "X", "-"}, {"X", "O", "O"}};
+        String turn = "X";
+        int row = 1;
+        int col = 1;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
+    @Test
+    public void testCheckWinCol2By_O_output_true() {
+        String[][] table = {{"X", "O", "O"}, {"X", "O", "-"}, {"-", "O", "X"}};
+        String turn = "O";
+        int row = 2;
+        int col = 2;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
+    @Test
+    public void testCheckWinCol3By_X_output_true() {
+        String[][] table = {{"-", "-", "X"}, {"-", "O", "X"}, {"-", "O", "X"}};
+        String turn = "X";
+        int row = 3;
+        int col = 3;
+        assertEquals(true, OXProgram.checkWin(table, turn, row, col));
+    }
+
+
+
 
 }
